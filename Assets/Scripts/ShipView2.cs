@@ -1,13 +1,14 @@
-
 using UnityEngine;
+
 using System;
 using System.Collections.Generic;
 using ArcticCore;
 
-public class ShipView: MonoBehaviour, IEarthObject
+public class ShipView2: MonoBehaviour, IEarthObject
 {
     public Ship model;
-    public GameObject headingArrow;
+    public GameObject icon;
+    public GameObject directionalRoot;
     protected Material material;
 
     public float GetLongtitudeDeg() => model.longitudeDeg;
@@ -17,9 +18,10 @@ public class ShipView: MonoBehaviour, IEarthObject
     public bool selected;
     protected SelectState oldSelectState;
 
-    public void Awake()
+
+    public void Start()
     {
-        var meshRenderer = GetComponent<MeshRenderer>();
+        var meshRenderer = icon.GetComponent<MeshRenderer>();
         material = meshRenderer.material = meshRenderer.material; // copy material
     }
 
@@ -47,6 +49,7 @@ public class ShipView: MonoBehaviour, IEarthObject
 
     public void Update()
     {
+        // Sync select state (material color)
         var selectState = GetSelectState();
         if(selectState != oldSelectState)
         {
@@ -54,15 +57,19 @@ public class ShipView: MonoBehaviour, IEarthObject
             oldSelectState = selectState;
         }
 
-        var headingArrowR = 0.8f;
-        var zDeg = Utils.TrueNorthClockwiseDegToUnityDeg(model.headingDeg);
-        headingArrow.transform.localEulerAngles = new Vector3(0, 0, zDeg);
+        // sync arrow direction
+        // var headingArrowR = 0.8f;
+        // var zDeg = Utils.TrueNorthClockwiseDegToUnityDeg(model.headingDeg);
+        // directionalRoot.transform.localEulerAngles = new Vector3(0, 0, zDeg);
         
-        var zRag = zDeg * Mathf.Deg2Rad;
-        var xOffset = Mathf.Cos(zRag) * headingArrowR;
-        var yOffset = Mathf.Sin(zRag) * headingArrowR;
-        headingArrow.transform.localPosition = new Vector3(xOffset, yOffset, 0);
+        // var zRag = zDeg * Mathf.Deg2Rad;
+        // var xOffset = Mathf.Cos(zRag) * headingArrowR;
+        // var yOffset = Mathf.Sin(zRag) * headingArrowR;
+        // directionalRoot.transform.localPosition = new Vector3(xOffset, yOffset, 0);
+
+        directionalRoot.transform.localEulerAngles = new Vector3(0, model.headingDeg, 0);
 
         // TODO: Handle left click navigation here?
     }
+
 }

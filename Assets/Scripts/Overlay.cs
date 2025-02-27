@@ -7,6 +7,8 @@ public class Overlay : MonoBehaviour
 
     VisualElement root;
 
+    VisualElement unitViewFoldout;
+
     Slider cameraRotationSlider;
 
     public float initialEulerY;
@@ -16,6 +18,7 @@ public class Overlay : MonoBehaviour
         var doc = GetComponent<UIDocument>();
         root = doc.rootVisualElement;
         cameraRotationSlider = root.Q<Slider>("CameraRotationSlider");
+        unitViewFoldout = root.Q<VisualElement>("UnitViewFoldout");
 
         initialEulerY = controlledCameraTransform.localEulerAngles.y;
 
@@ -26,6 +29,11 @@ public class Overlay : MonoBehaviour
                 controlledCameraTransform.localEulerAngles.z
             );
         });
+
+        var setHeadingButton = root.Q<Button>("SetHeadingButton");
+        setHeadingButton.clicked += () => {
+            GameManager.Instance.state = GameManager.State.SelectingHeading;
+        };
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

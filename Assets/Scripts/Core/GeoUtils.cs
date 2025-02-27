@@ -39,7 +39,7 @@ public class GeoUtils
         return $"New Latitude: {result.newLat}, New Longitude: {result.newLon}";
     }
 
-    static double CalculateInitialBearing(double lat1, double lon1, double lat2, double lon2)
+    public static double CalculateInitialBearing(double lat1, double lon1, double lat2, double lon2)
     {
         // Convert latitude and longitude from degrees to radians
         double lat1Rad = DegreesToRadians(lat1);

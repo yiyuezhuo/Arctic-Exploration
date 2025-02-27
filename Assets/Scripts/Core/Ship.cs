@@ -8,6 +8,7 @@ namespace ArcticCore
 [Serializable]
 public class Ship
 {
+    public string name = "unnamed ship";
     public float longitudeDeg;
     public float latitudeDeg;
     public float shipKnot;

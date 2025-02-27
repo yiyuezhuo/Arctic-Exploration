@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Unlit_ShipShader
-  m_Shader: {fileID: 4800000, guid: 00188093cfd92e04f8ca084b08b844e2, type: 3}
+  m_Name: Unlit_Unlit_ShipShader2
+  m_Shader: {fileID: 4800000, guid: 03514f84b616abe41800ceaa3795f20b, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -29,8 +29,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _OutlineThickness: 0.03
+    - _BorderSize: 0.02
+    - _CornerSize: 0.2
+    - _ShowBorder: 0
     m_Colors:
-    - _OutlineColor: {r: 1, g: 0, b: 0, a: 1}
+    - _BorderColor: {r: 1, g: 0, b: 0, a: 1}
+    - _MainColor: {r: 0.031372547, g: 0.9951775, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

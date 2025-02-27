@@ -17,4 +17,9 @@ public static class Utils
 
         return new Vector3(x, y, z);
     }
+
+    public static float TrueNorthClockwiseDegToUnityDeg(float trueNorthClockwisedeg)
+    {
+        return 90 - trueNorthClockwisedeg;
+    }
 }

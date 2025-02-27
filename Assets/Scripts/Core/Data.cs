@@ -21,14 +21,15 @@ public static class Data
         }
     }
 
-    public static List<Location> locations = new()
-    {
-        new("Disko Bay", 69, -52),
-        new("Greenland", 72, -43),
-        new("Baffin Bay", 74, -69),
-        new("Prince of Wales Island", 72.5f, 99),
-        new("Cornwallis", 75, 94.5f)
-    };
+    // In favor of kml import
+    // public static List<Location> locations = new()
+    // {
+    //     new("Disko Bay", 69, -52),
+    //     new("Greenland", 72, -43),
+    //     new("Baffin Bay", 74, -69),
+    //     new("Prince of Wales Island", 72.5f, 99),
+    //     new("Cornwallis", 75, 94.5f)
+    // };
 }
 
 }

@@ -7,6 +7,7 @@ using SharpKml.Engine;
 using SharpKml.Dom;
 // using Unity.VisualScripting;
 using UnityEngine.PlayerLoop;
+using UnityEngine.EventSystems;
 
 
 public class GameManager : MonoBehaviour
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject lineStringViewPrefab;
     public Transform lineStringsTransform;
+    public LayerMask iconLayerMask;
 
     // Unity.Collections.NativeArray<short> heightTextureRawArray;
     Unity.Collections.NativeArray<ushort> heightTextureRawArray;
@@ -30,6 +32,17 @@ public class GameManager : MonoBehaviour
 
     public bool enableLocations;
     public bool enableLineStrings;
+
+    public ShipView3 hoveringShipView;
+    public ShipView3 selectedShipView;
+
+    public enum State
+    {
+        Idle,
+        SelectingHeading
+    }
+
+    public State state = State.Idle;
 
     void Awake()
     {
@@ -132,14 +145,90 @@ public class GameManager : MonoBehaviour
             currentLongitude = lonDeg;
             currentHeight = GetHeight(latDeg, lonDeg, out var latIdx, out var lonIdx);
 
-            if(Input.GetMouseButton(0))
-            {
-                Debug.Log($"Left Click hit.point={hitPoint}, lat={latDeg}, lon={lonDeg}");
-            }
+            // if(Input.GetMouseButtonDown(0))
+            // {
+            //     Debug.Log($"Left Click hit.point={hitPoint}, lat={latDeg}, lon={lonDeg}");
+            // }
         }
 
         locationsTransform.gameObject.SetActive(enableLocations);
         lineStringsTransform.gameObject.SetActive(enableLineStrings);
+
+        if(!EventSystem.current.IsPointerOverGameObject())
+        {
+            if(state == State.Idle)
+            {
+                // Unit interaction
+                Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+                var shouldClear = true;
+                if(Physics.Raycast(ray, out var hit, Mathf.Infinity, iconLayerMask))
+                {
+                    // var ship = hit.collider.gameObject.GetComponent<ShipView>();
+                    // var ship = hit.collider.gameObject.GetComponent<ShipView2>();
+                    var ship = hit.collider.gameObject.GetComponent<FixedDirectionalSizeIcon>()?.root?.GetComponent<ShipView3>();
+                    if(ship != null)
+                    {
+                        hoveringShipView = ship;
+                        hoveringShipView.hovering = true;
+
+                        shouldClear = false;
+                    }
+                }
+                if(shouldClear)
+                {
+                    if(hoveringShipView != null)
+                    {
+                        hoveringShipView.hovering = false;
+                        hoveringShipView = null;
+                    }
+                }
+
+                // Left click select
+                if(Input.GetMouseButtonDown(0))
+                {
+                    if(hoveringShipView != null)
+                    {
+                        selectedShipView = hoveringShipView;
+                        selectedShipView.selected = true;
+                    }
+                    else
+                    {
+                        if(selectedShipView != null)
+                        {
+                            selectedShipView.selected = false;
+                            selectedShipView = null;
+                        }
+                    }
+                }
+            }
+            else if(state == State.SelectingHeading)
+            {
+                // 
+                if(Input.GetMouseButtonDown(0))
+                {
+                    if(selectedShipView != null && collied)
+                    {
+                        var model = selectedShipView.model;
+                        var lat1 = model.latitudeDeg;
+                        var lon1 = model.longitudeDeg;
+                        var lat2 = latDeg;
+                        var lon2 = lonDeg;
+
+                        var bearing = (float)GeoUtils.CalculateInitialBearing(lat1, lon1, lat2, lon2);
+                        model.headingDeg = bearing;
+
+                        // selectedShipView.model.headingDeg = 
+                    }
+                    state = State.Idle;
+                }
+            }
+
+        }
+
+        if(Input.GetKeyDown(KeyCode.F3))
+        {
+            state = State.SelectingHeading;
+        }
     }
 
     public bool GetCurrentLatitudeLongitude(out Vector3 hitPoint, out float latDeg, out float lonDeg)

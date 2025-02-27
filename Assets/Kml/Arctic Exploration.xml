@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document id="1VyuqVT1NzQM9RDmZvLmj8qL5FJGAO67x">
+	<name>Arctic Exploration</name>
+	<gx:CascadingStyle kml:id="__managed_style_25A1C9ADEB367570E5E0">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_058B2D6ED4367570E5E0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_1528A6ED77367570E5E0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_25A1C9ADEB367570E5E0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_03B58F176136756FF260">
+		<styleUrl>https://earth.google.com/balloon_components/base/1.0.26.0/card_template.kml#main</styleUrl>
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_18921D26FD36756FF25F">
+		<styleUrl>https://earth.google.com/balloon_components/base/1.0.26.0/card_template.kml#main</styleUrl>
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_1528A6ED77367570E5E0">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_0FE1B2BB7C36756FF25F">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_18921D26FD36756FF25F</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_03B58F176136756FF260</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_2FAC6F060336719D7087">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=fbc02d&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<gx:displayMode>card</gx:displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_1768E01CDB36719D7087">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=fbc02d&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<gx:displayMode>card</gx:displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_02E90F04E236719D7087">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_1768E01CDB36719D7087</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_2FAC6F060336719D7087</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark id="0E592D12E1366CB4838B">
+		<name>Arctic</name>
+		<gx:mid>/m/09738</gx:mid>
+		<gx:fid>0x4e753c9b20485bfd:0x4e5f0d379253c31</gx:fid>
+		<LookAt>
+			<longitude>-68.29893749999998</longitude>
+			<latitude>69.08445114999999</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>16996324.22836922</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-100.113952,76.2505778,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0158D76F64366CB53FD6">
+		<name>North Pole</name>
+		<gx:mid>/m/05h21</gx:mid>
+		<gx:fid>0x4f9344da9515b951:0x4518d0c4d5c68876</gx:fid>
+		<LookAt>
+			<longitude>-135</longitude>
+			<latitude>85</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>0.1</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-135,89.99999989999999,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="03182715A43675590A1F">
+		<name>Greenhithe</name>
+		<gx:mid>/m/044jw3</gx:mid>
+		<gx:fid>0x47d8b13538056051:0x8543056772773448</gx:fid>
+		<LookAt>
+			<longitude>0.2810687</longitude>
+			<latitude>51.4496723</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>3105.100549981423</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>0.284623,51.4489903,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="072126C1F936755A12EF">
+		<name>Stromness</name>
+		<gx:mid>/m/0qn45</gx:mid>
+		<gx:fid>0x489a57f633d35471:0x70ebd2108fe81c8b</gx:fid>
+		<LookAt>
+			<longitude>-3.29511495</longitude>
+			<latitude>58.96522289999999</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>5989.932362812267</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-3.296495,58.96619399999999,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="08F0D370FC367560315D">
+		<name>Disko Bugt</name>
+		<gx:mid>/m/07660n</gx:mid>
+		<gx:fid>0x4e8d388cb007933b:0xf1b44fcf481268c5</gx:fid>
+		<LookAt>
+			<longitude>-52.1640216</longitude>
+			<latitude>69.13607569999999</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>277110.5748074494</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-52.04470490000001,69.0263356,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="07F1036204367561DE8D">
+		<name>Baffin Bay</name>
+		<gx:mid>/g/1tf_0qnm</gx:mid>
+		<gx:fid>0x4e157150b3232777:0x62faa33f877e9e27</gx:fid>
+		<LookAt>
+			<longitude>-75.4330956</longitude>
+			<latitude>72.66274559999999</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>1356.187749134775</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-75.4330956,72.66274589999999,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="03163D49D9367562B1AC">
+		<name>Lancaster Sound</name>
+		<gx:mid>/m/08vwbk</gx:mid>
+		<gx:fid>0x4e23ade8924feeab:0xe375d121dc4f6722</gx:fid>
+		<LookAt>
+			<longitude>-83.99999999999999</longitude>
+			<latitude>74.21666669999999</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>1222.206391349606</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-84,74.216667,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0A42EDDD96367563D876">
+		<name>Beechey Island</name>
+		<gx:mid>/m/08tq3j</gx:mid>
+		<gx:fid>0x51df24478027eed5:0x33bc76171f6c7772</gx:fid>
+		<LookAt>
+			<longitude>-91.85321329999999</longitude>
+			<latitude>74.71350635</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>6410.488959850799</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-91.84604069999999,74.71151159999999,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0DF3BD8105367564A8E3">
+		<name>Peel Sound</name>
+		<gx:mid>/m/04cvbn7</gx:mid>
+		<gx:fid>0x51e7981b99022ac1:0xe4a0c955ccdf3efc</gx:fid>
+		<LookAt>
+			<longitude>-96.50000009999999</longitude>
+			<latitude>72.99999969999999</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>1326.947804800552</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-96.50000009999998,73,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0BF51C1591367565372C">
+		<name>Prince of Wales Island</name>
+		<gx:mid>/m/03ktfr</gx:mid>
+		<gx:fid>0x51e850f495229401:0x5c16b31cc7117000</gx:fid>
+		<LookAt>
+			<longitude>-99.50693495</longitude>
+			<latitude>72.62245949999999</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>929538.350033575</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-99.469234,72.67661749999999,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="033619650D36756B934F">
+		<name>Wellington Channel</name>
+		<gx:mid>/m/04zyz_h</gx:mid>
+		<gx:fid>0x51d933a6865cca45:0x803348fbc203445e</gx:fid>
+		<LookAt>
+			<longitude>-92.99999989999999</longitude>
+			<latitude>74.9999997</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>1155.41403116435</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-92.99999990000001,75,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="01594D08B736756BE261">
+		<name>Cornwallis Island</name>
+		<gx:mid>/m/03khdq</gx:mid>
+		<gx:fid>0x51dbe34e3c199939:0x874238210c8f4a61</gx:fid>
+		<LookAt>
+			<longitude>-95.00723249999999</longitude>
+			<latitude>75.13550550000001</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>199602.1647030537</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-95.14148840000001,75.09722859999999,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0C128CBA6E36756D6D8D">
+		<name>wintered in 1846–7</name>
+		<description><![CDATA[<div>1111</div>]]></description>
+		<LookAt>
+			<longitude>-104.4830852889039</longitude>
+			<latitude>72.26703391431556</latitude>
+			<altitude>174.4114326033605</altitude>
+			<heading>9.417956523857512e-07</heading>
+			<tilt>14.37187474149361</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>1450251.735894084</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0FE1B2BB7C36756FF25F</styleUrl>
+		<Point>
+			<coordinates>-91.66,74.66,272.583309160956</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0791CC9C8B367570E5D9">
+		<name>wintered in 1845–6</name>
+		<LookAt>
+			<longitude>-93.41270420759297</longitude>
+			<latitude>74.50164843213349</latitude>
+			<altitude>24.38715857755286</altitude>
+			<heading>4.340898923916568e-07</heading>
+			<tilt>12.82227955243256</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>602528.9373803885</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_058B2D6ED4367570E5E0</styleUrl>
+		<Point>
+			<coordinates>-95.98344763263529,68.89615325923886,8.410608356487986</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0CBB400F7236758FA98E">
+		<name>Victory Point</name>
+		<gx:mid>/g/11v4n2mb0d</gx:mid>
+		<gx:fid>0x51f05335bc482881:0xb9951744e5708be6</gx:fid>
+		<LookAt>
+			<longitude>-98.3030713</longitude>
+			<latitude>69.6274641</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>339.0626246043829</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-98.3030713,69.6274641,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="023CD270113675972ACC">
+		<name>Back River</name>
+		<gx:mid>/m/0f_51</gx:mid>
+		<gx:fid>0x5202a0e89bb80b11:0x640eac37e980ca7e</gx:fid>
+		<LookAt>
+			<longitude>-95.26028290000001</longitude>
+			<latitude>67.25880269999999</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>1829.297696141725</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-95.26028289999999,67.25880309999999,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0CDF00879D3675A2C251">
+		<name>King William Island</name>
+		<gx:mid>/m/03l6n4</gx:mid>
+		<gx:fid>0x51f0c05037a354e9:0x7120b9546a209781</gx:fid>
+		<LookAt>
+			<longitude>-97.34748674999999</longitude>
+			<latitude>69.17870425</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>275815.7385132634</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-97.65246309999999,68.92561409999999,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="06308E7DE23675A5BBA5">
+		<name>Franklin&apos;s-Lost-Expedition</name>
+		<LookAt>
+			<longitude>-94.26952633928742</longitude>
+			<latitude>72.21137029404957</latitude>
+			<altitude>368.5212770024192</altitude>
+			<heading>4.165656392686548</heading>
+			<tilt>19.81806000483564</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>1331984.099048227</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_058B2D6ED4367570E5E0</styleUrl>
+		<LineString>
+			<coordinates>
+				0.6437643141335192,51.73066216446662,0 2.185410631619593,51.97667241019658,0 -2.872454352359306,59.74758434512506,0 -46.25956710690281,59.07859095628406,0 -55.42924365824107,64.53496543233562,0 -53.42172837237966,69.80882828350011,0 -75.12979338814984,73.01942757813178,0 -78.49512593645258,74.54144312859854,0 -88.95128804955939,74.07067416773467,0 -92.08497755599484,74.71425332336619,0 -93.25051717502859,75.72003396909714,0 -96.9200055675355,75.82792224657479,0 -97.22230002105779,74.73222648134026,0 -95.78986081322893,72.04100254598023,0 -98.60146438834147,69.87828408962092,0 -98.49046912467433,69.64398778933666,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+	<Placemark id="0E4FA32B1F3676DFFECD">
+		<name>Victoria Island</name>
+		<gx:mid>/m/0j1x3</gx:mid>
+		<gx:fid>0x51f318ae882c3541:0x2c6b25ff05e12da4</gx:fid>
+		<LookAt>
+			<longitude>-109.957361</longitude>
+			<latitude>70.91922235</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>972731.9844228133</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-109.9574009,70.91920019999999,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="088D0C113B3676E0537B">
+		<name>Banks Island</name>
+		<gx:mid>/m/0j9nr</gx:mid>
+		<gx:fid>0x51bcaa5f8d3faf19:0xf56fcb73ed47e1b6</gx:fid>
+		<LookAt>
+			<longitude>-120.6479916</longitude>
+			<latitude>72.8167344</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>879083.8561839456</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-120.7232952,73.0758199,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="00B630011C3676E0D4FB">
+		<name>Melville Island</name>
+		<gx:mid>/g/1z44bj4fx</gx:mid>
+		<gx:fid>0x51c8804cc66b9205:0xe62ac0a5c681b01</gx:fid>
+		<LookAt>
+			<longitude>-107.59165615</longitude>
+			<latitude>75.85006279999999</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>363710.0959053506</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-107.6648763,75.52251029999999,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0FDF7F08623676E131EF">
+		<name>Prince Patrick Island</name>
+		<gx:mid>/m/03l14v</gx:mid>
+		<gx:fid>0x51b6aa8bea113c27:0xc498dd2ad31fbffa</gx:fid>
+		<LookAt>
+			<longitude>-119.1876269</longitude>
+			<latitude>76.68731929999998</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>342590.4800013864</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-118.9720836,76.77753489999999,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="004B5E22EF3676E1C869">
+		<name>Bathurst Island</name>
+		<gx:mid>/m/03l0vw</gx:mid>
+		<gx:fid>0x51c52e75469f19b3:0x2b2bdd562e7e2f9</gx:fid>
+		<LookAt>
+			<longitude>-100.0564961</longitude>
+			<latitude>75.83156735</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>364175.7794670814</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-99.0941229,75.72766319999999,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0722B45E4B3676E28A05">
+		<name>Axel Heiberg Island</name>
+		<gx:mid>/m/03kk_f</gx:mid>
+		<gx:fid>0x502abd5ca2f1127f:0x933d64394641ef61</gx:fid>
+		<LookAt>
+			<longitude>-90.80883165</longitude>
+			<latitude>79.7518196</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>1058797.953781985</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-91.2678828,79.8286535,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0B690B590B3676E331E6">
+		<name>Devon Island</name>
+		<gx:mid>/m/033wdh</gx:mid>
+		<gx:fid>0x4e270084b6ed7b8f:0x891e1b5bc476379</gx:fid>
+		<LookAt>
+			<longitude>-88.15666515000001</longitude>
+			<latitude>75.76258994999999</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>731824.3529728006</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-81.85118179999999,75.1982354,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0F2D308F1A3676E45616">
+		<name>Ellef Ringnes Island</name>
+		<gx:mid>/m/03l6p8</gx:mid>
+		<gx:fid>0x51d28bd5856030b9:0x93b2514fb4b53200</gx:fid>
+		<LookAt>
+			<longitude>-102.27460865</longitude>
+			<latitude>78.5770299</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>294661.0202402204</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-101.9987828,78.6878481,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0647C3D0003676E4DA44">
+		<name>Amund Ringnes Island</name>
+		<gx:mid>/m/03l6t3</gx:mid>
+		<gx:fid>0x51d38e8c8959bee1:0x69a352ef6c38535b</gx:fid>
+		<LookAt>
+			<longitude>-96.63229339999999</longitude>
+			<latitude>78.301903</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>301660.346697367</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-96.98883239999998,78.2996589,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="08B41311AF3676E55D8B">
+		<name>Mackenzie King Island</name>
+		<gx:mid>/m/03lzzs</gx:mid>
+		<gx:fid>0x51ca53bd32e68e8d:0xca4a63f7f45ab3f6</gx:fid>
+		<LookAt>
+			<longitude>-111.4415047</longitude>
+			<latitude>77.72480179999999</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>158159.609228308</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-111.3731012,77.6493289,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="062D3007513676E5D910">
+		<name>Lougheed Island</name>
+		<gx:mid>/m/0565mc</gx:mid>
+		<gx:fid>0x51ce9d6ed1d6bc17:0x1efd2d04dca202a</gx:fid>
+		<LookAt>
+			<longitude>-105.22512275</longitude>
+			<latitude>77.44227284999999</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>161742.0451894512</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-105.3771919,77.4465759,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="013EBE50423676E65615">
+		<name>Borden Island</name>
+		<gx:mid>/m/04_snh</gx:mid>
+		<gx:fid>0x51cb2e2b6b2685ab:0xee52f75e7aa84209</gx:fid>
+		<LookAt>
+			<longitude>-111.2745631</longitude>
+			<latitude>78.5171632</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>148092.3171869446</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-109.9178616,78.4349378,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="07E5C010D13676E706CF">
+		<name>Byam Martin Island</name>
+		<gx:mid>/m/056ksf</gx:mid>
+		<gx:fid>0x51c42a4f459eded7:0x44ef604394a7cec6</gx:fid>
+		<LookAt>
+			<longitude>-104.24141165</longitude>
+			<latitude>75.23289819999999</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>94807.11735668022</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-104.2138172,75.23421619999999,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="092F87C4163676E77D7E">
+		<name>Cornwall Island</name>
+		<gx:mid>/m/0555vz</gx:mid>
+		<gx:fid>0x51d6b04e0ce2c31f:0xa49e64f864f17e79</gx:fid>
+		<LookAt>
+			<longitude>-94.91233265</longitude>
+			<latitude>77.70084435</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>158463.5375025791</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-94.47800889999999,77.61697269999999,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="095CDB7B863676E7C441">
+		<name>Graham Island</name>
+		<gx:mid>/m/056k86</gx:mid>
+		<gx:fid>0x51d6244a59c38cf7:0x230ebfe94ce62212</gx:fid>
+		<LookAt>
+			<longitude>-90.42627700000001</longitude>
+			<latitude>77.42707795</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>161934.6041812091</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-90.5023588,77.4238292,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="08AE1CF3B33676E8C6C6">
+		<name>Eglinton Island</name>
+		<gx:mid>/m/056k4n</gx:mid>
+		<gx:fid>0x51b1147e4f591069:0x655985793b4915eb</gx:fid>
+		<LookAt>
+			<longitude>-118.4152297</longitude>
+			<latitude>75.8685397</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>1028.913020872271</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-118.4152297,75.86854,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="04F6FC1E153676EA346A">
+		<name>Baffin Island</name>
+		<gx:mid>/m/0j00k</gx:mid>
+		<gx:fid>0x4e1b064b659315e1:0x3732c0bafae3f560</gx:fid>
+		<LookAt>
+			<longitude>-75.68626485</longitude>
+			<latitude>67.86174674999999</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>2242680.06459319</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-70.96542099999999,65.4215054,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="090778EF7C3676EB62CF">
+		<name>Greenland</name>
+		<gx:mid>/m/035v3</gx:mid>
+		<gx:fid>0x4ea20dbbe3c07715:0x34cf9d830114e218</gx:fid>
+		<LookAt>
+			<longitude>-33.50135145</longitude>
+			<latitude>71.69045985</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>7478335.27526891</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-42.604303,71.706936,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="09C2B8E5373676EBC901">
+		<name>Canada</name>
+		<gx:mid>/m/0d060g</gx:mid>
+		<gx:fid>0x4b0d03d337cc6ad9:0x9968b72aa2438fa5</gx:fid>
+		<LookAt>
+			<longitude>-96</longitude>
+			<latitude>56</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>13311554.54090331</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_02E90F04E236719D7087</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-106.346771,56.13036599999999,0</coordinates>
+		</Point>
+	</Placemark>
+</Document>
+</kml>

@@ -1,0 +1,38 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:TabView>
+        <engine:Tab label="Control">
+            <engine:VisualElement style="flex-grow: 0; width: 300px; background-color: rgba(255, 255, 255, 0.49);">
+                <engine:Slider label="Camera Rotation" value="0" high-value="180" name="CameraRotationSlider" show-input-field="true" low-value="-180" />
+                <engine:FloatField label="Latitude" name="LatitudeFloatField">
+                    <Bindings>
+                        <engine:DataBinding property="value" data-source-path="currentLatitude" data-source-type="GameManager, Assembly-CSharp" binding-mode="TwoWay" />
+                    </Bindings>
+                </engine:FloatField>
+                <engine:FloatField label="Longitude" name="LongtitudeFloatField">
+                    <Bindings>
+                        <engine:DataBinding property="value" data-source-path="currentLongitude" data-source-type="GameManager, Assembly-CSharp" binding-mode="TwoWay" />
+                    </Bindings>
+                </engine:FloatField>
+                <engine:FloatField label="Height" name="HeightFloatField">
+                    <Bindings>
+                        <engine:DataBinding property="value" data-source-path="currentHeight" data-source-type="GameManager, Assembly-CSharp" binding-mode="TwoWay" />
+                    </Bindings>
+                </engine:FloatField>
+            </engine:VisualElement>
+        </engine:Tab>
+        <engine:Tab label="View">
+            <engine:VisualElement style="flex-grow: 0; background-color: rgba(255, 255, 255, 0.49); width: 300px;">
+                <engine:Toggle label="Locations" name="LocationsToggle">
+                    <Bindings>
+                        <engine:DataBinding property="value" data-source-path="enableLocations" data-source-type="GameManager, Assembly-CSharp" binding-mode="TwoWay" />
+                    </Bindings>
+                </engine:Toggle>
+                <engine:Toggle label="Line String" name="LineStringsToggle">
+                    <Bindings>
+                        <engine:DataBinding property="value" data-source-path="enableLineStrings" data-source-type="GameManager, Assembly-CSharp" binding-mode="TwoWay" />
+                    </Bindings>
+                </engine:Toggle>
+            </engine:VisualElement>
+        </engine:Tab>
+    </engine:TabView>
+</engine:UXML>

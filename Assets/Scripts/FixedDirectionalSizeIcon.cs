@@ -6,7 +6,8 @@ public class FixedDirectionalSizeIcon : MonoBehaviour
     public float scaleFactor = 1;
     public GameObject root;
 
-    public void Update()
+    // public void Update()
+    public void LateUpdate()
     {
 
         var cam = CameraController.Instance.camIcon;

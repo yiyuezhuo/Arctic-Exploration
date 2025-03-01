@@ -36,7 +36,7 @@
                             <engine:DataBinding property="value" data-source-path="shipKnot" data-source-type="ArcticCore.Ship, Assembly-CSharp" binding-mode="TwoWay" />
                         </Bindings>
                     </engine:FloatField>
-                    <engine:Button text="Set Heading by clicking on Map (F3)" name="SetHeadingButton" />
+                    <engine:Button text="Set Heading by clicking on Map (D)" name="SetHeadingButton" />
                 </engine:Foldout>
             </engine:VisualElement>
         </engine:Tab>

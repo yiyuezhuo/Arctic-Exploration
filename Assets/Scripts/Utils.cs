@@ -22,4 +22,21 @@ public static class Utils
     {
         return 90 - trueNorthClockwisedeg;
     }
+
+    public static (float latDeg, float lonDeg) Vector3ToLatitudeLongitudeDeg(Vector3 point)
+    {
+        var x = point.x;
+        var y = point.y;
+        var z = point.z;
+
+        var hr = Mathf.Sqrt(z*z + x*x);
+        var latRad = Mathf.Atan2(y, hr);
+        // var lonRad = Mathf.Acos(-z / hr);
+        var lonRad = Mathf.Atan2(x, -z);
+
+        var latDeg = latRad * Mathf.Rad2Deg;
+        var lonDeg = lonRad * Mathf.Rad2Deg;
+
+        return (latDeg, lonDeg);
+    }
 }

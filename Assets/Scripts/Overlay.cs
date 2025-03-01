@@ -34,6 +34,11 @@ public class Overlay : MonoBehaviour
         setHeadingButton.clicked += () => {
             GameManager.Instance.state = GameManager.State.SelectingHeading;
         };
+
+        var helpButton = root.Q<Button>("HelpButton");
+        helpButton.clicked += () => {
+            HelpDialog.Instance.Show();
+        };
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

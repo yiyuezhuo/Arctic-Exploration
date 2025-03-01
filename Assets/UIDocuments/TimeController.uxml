@@ -1,0 +1,13 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UIDocuments/style.uss?fileID=7433441132597879392&amp;guid=f05f026fddbc4f54abfe6103d35ce4ba&amp;type=3#style" />
+    <engine:VisualElement style="flex-grow: 0; background-color: rgba(255, 255, 255, 0.49); width: 220px; right: 0; top: 0; position: absolute;">
+        <engine:Label text="1 May 1848 10:00" tooltip="Game timestamp" name="TimeLabel" />
+        <engine:VisualElement style="flex-grow: 0; flex-direction: row;">
+            <engine:Button text="Step" name="StepButton" tooltip="Advanced a step." style="flex-grow: 1; flex-basis: initial;" />
+            <engine:Button text="Start" name="StartButton" tooltip="start auto-playing" style="flex-basis: initial; flex-grow: 1;" />
+            <engine:Button text="Pause" name="PauseButton" tooltip="puase auto-playing" style="flex-basis: initial; flex-grow: 1;" />
+        </engine:VisualElement>
+        <engine:SliderInt label="Speed" high-value="20" show-input-field="true" name="SpeedSliderInt" tooltip="How many step a real second advanced." low-value="0" value="5" />
+        <engine:SliderInt label="Step (m/s)" high-value="120" show-input-field="true" name="StepSliderInt" tooltip="How many game minutes a step will advance" value="60" />
+    </engine:VisualElement>
+</engine:UXML>

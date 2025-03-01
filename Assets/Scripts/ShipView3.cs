@@ -32,6 +32,14 @@ public class ShipView3: MonoBehaviour, IEarthObject
         material = meshRenderer.material = meshRenderer.material; // copy material
     }
 
+    public void Step(float deltaSeconds)
+    {
+        model.Move(deltaSeconds);
+
+        // FogOfWarSphere.Instance?.UpdateFogOfWar(model.latitudeDeg, model.longitudeDeg, 20);
+        FogOfWarSphere.Instance?.UpdateFogOfWar(model.latitudeDeg, model.longitudeDeg, 12);
+    }
+
     public void SyncSelectState(SelectState state)
     {
         var value = (float)(int)state;

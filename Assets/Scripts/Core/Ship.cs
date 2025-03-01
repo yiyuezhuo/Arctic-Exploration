@@ -13,10 +13,15 @@ public class Ship
     public float latitudeDeg;
     public float shipKnot;
     public float headingDeg; // true north - clockwise (0 deg => North, 90 deg => East)
+    public int crew;
+    public float provision;
+    public int damage;
 
 
-    public void Move(float hours)
+    public void Move(float seconds)
     {
+        var hours = seconds / 3600;
+
         // Core.LatitudeLongitudeDegToHeightMeter()
         var distNm = hours * shipKnot;
         var distM = distNm * 1854;

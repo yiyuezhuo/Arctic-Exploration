@@ -1,5 +1,6 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <engine:TabView style="width: 300px;">
+    <Style src="project://database/Assets/UIDocuments/style2.uss?fileID=7433441132597879392&amp;guid=4c8823fe6da796740927e6d2326925cf&amp;type=3#style2" />
+    <engine:TabView style="width: 275px;">
         <engine:Tab label="Control">
             <engine:VisualElement style="flex-grow: 1; background-color: rgba(255, 255, 255, 0.49); width: auto;">
                 <engine:VisualElement style="flex-grow: 0;">
@@ -21,7 +22,7 @@
                     </engine:FloatField>
                 </engine:VisualElement>
                 <engine:Foldout text="Ship" name="UnitViewFoldout" data-source-type="GameManager, Assembly-CSharp" data-source-path="selectedShipView.model">
-                    <engine:TextField label="Name" placeholder-text="filler text">
+                    <engine:TextField label="Name">
                         <Bindings>
                             <engine:DataBinding property="value" data-source-path="name" data-source-type="ArcticCore.Ship, Assembly-CSharp" binding-mode="TwoWay" />
                         </Bindings>
@@ -36,11 +37,28 @@
                             <engine:DataBinding property="value" data-source-path="shipKnot" data-source-type="ArcticCore.Ship, Assembly-CSharp" binding-mode="TwoWay" />
                         </Bindings>
                     </engine:FloatField>
+                    <engine:IntegerField label="Crew">
+                        <Bindings>
+                            <engine:DataBinding property="value" data-source-path="crew" binding-mode="TwoWay" />
+                        </Bindings>
+                    </engine:IntegerField>
+                    <engine:FloatField label="Provision">
+                        <Bindings>
+                            <engine:DataBinding property="value" data-source-path="provision" binding-mode="TwoWay" />
+                        </Bindings>
+                    </engine:FloatField>
+                    <engine:IntegerField label="Damage">
+                        <Bindings>
+                            <engine:DataBinding property="value" data-source-path="damage" binding-mode="TwoWay" />
+                        </Bindings>
+                    </engine:IntegerField>
                     <engine:Button text="Set Heading by clicking on Map (D)" name="SetHeadingButton" />
+                    <engine:Button text="Detach Expedition Team (U)" name="DetachButton" />
+                    <engine:Button text="Recover Expedition Team (L)" name="RecoverButton" />
                 </engine:Foldout>
             </engine:VisualElement>
         </engine:Tab>
-        <engine:Tab label="View">
+        <engine:Tab label="Misc">
             <engine:VisualElement style="flex-grow: 0; background-color: rgba(255, 255, 255, 0.49); width: 300px;">
                 <engine:Toggle label="Locations" name="LocationsToggle">
                     <Bindings>
@@ -52,6 +70,7 @@
                         <engine:DataBinding property="value" data-source-path="enableLineStrings" data-source-type="GameManager, Assembly-CSharp" binding-mode="TwoWay" />
                     </Bindings>
                 </engine:Toggle>
+                <engine:Button text="Help" name="HelpButton" />
             </engine:VisualElement>
         </engine:Tab>
     </engine:TabView>

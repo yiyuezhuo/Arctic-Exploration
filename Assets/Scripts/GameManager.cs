@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject locationPrefab;
     public Transform locationsTransform;
+    public Transform shipViewsTransform;
 
     public GameObject lineStringViewPrefab;
     public Transform lineStringsTransform;
@@ -188,16 +189,19 @@ public class GameManager : MonoBehaviour
                 {
                     if(hoveringShipView != null)
                     {
+                        // select
                         selectedShipView = hoveringShipView;
                         selectedShipView.selected = true;
                     }
                     else
                     {
-                        if(selectedShipView != null)
-                        {
-                            selectedShipView.selected = false;
-                            selectedShipView = null;
-                        }
+                        // TODO: re-use this as direction selection?
+                        // de-select
+                        // if(selectedShipView != null)
+                        // {
+                        //     selectedShipView.selected = false;
+                        //     selectedShipView = null;
+                        // }
                     }
                 }
             }
@@ -223,13 +227,28 @@ public class GameManager : MonoBehaviour
                 }
             }
 
+            // Hotkeys
+            // if(Input.GetKeyDown(KeyCode.F3))
+            if(Input.GetKeyDown(KeyCode.D))
+            {
+                state = State.SelectingHeading;
+            }
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                state = State.Idle;
+
+                // de-select
+                if(selectedShipView != null)
+                {
+                    selectedShipView.selected = false;
+                    selectedShipView = null;
+                }
+
+            }
+
+
         }
 
-        // if(Input.GetKeyDown(KeyCode.F3))
-        if(Input.GetKeyDown(KeyCode.D))
-        {
-            state = State.SelectingHeading;
-        }
     }
 
     public bool GetCurrentLatitudeLongitude(out Vector3 hitPoint, out float latDeg, out float lonDeg)
@@ -238,17 +257,19 @@ public class GameManager : MonoBehaviour
         if(Physics.Raycast(ray, out RaycastHit hit))
         {
             hitPoint = hit.point;
-            var x = hit.point.x;
-            var y = hit.point.y;
-            var z = hit.point.z;
+            // var x = hit.point.x;
+            // var y = hit.point.y;
+            // var z = hit.point.z;
 
-            var hr = Mathf.Sqrt(z*z + x*x);
-            var latRad = Mathf.Atan2(y, hr);
-            // var lonRad = Mathf.Acos(-z / hr);
-            var lonRad = Mathf.Atan2(x, -z);
+            // var hr = Mathf.Sqrt(z*z + x*x);
+            // var latRad = Mathf.Atan2(y, hr);
+            // // var lonRad = Mathf.Acos(-z / hr);
+            // var lonRad = Mathf.Atan2(x, -z);
 
-            latDeg = latRad * Mathf.Rad2Deg;
-            lonDeg = lonRad * Mathf.Rad2Deg;
+            // latDeg = latRad * Mathf.Rad2Deg;
+            // lonDeg = lonRad * Mathf.Rad2Deg;
+
+            (latDeg, lonDeg) = Utils.Vector3ToLatitudeLongitudeDeg(hitPoint);
 
             return true;
 
@@ -258,6 +279,16 @@ public class GameManager : MonoBehaviour
         hitPoint = new();
         latDeg = lonDeg = 0;
         return false;
+    }
+
+    public void Step(float deltaSeconds)
+    {
+        foreach(var shipView in shipViewsTransform.GetComponentsInChildren<ShipView3>())
+        {
+            shipView.Step(deltaSeconds);
+        }
+
+        // FogOfWarSphere.Instance?.UpdateFogOfWar(Model.)
     }
 
     static GameManager _Instance;

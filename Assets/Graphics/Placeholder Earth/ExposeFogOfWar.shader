@@ -5,7 +5,7 @@ Shader "Unlit/ExposeFogOfWar"
         _MainTex ("Texture", 2D) = "white" {}
         _CenterLat ("Center Latitude", Float) = 0.0
         _CenterLon ("Center Longitude", Float) = 0.0
-        _Radius ("Radius (in nautical miles)", Float) = 20.0
+        _Radius ("Radius (in nautical miles)", Float) = 12.0 // 20km
     }
     SubShader
     {

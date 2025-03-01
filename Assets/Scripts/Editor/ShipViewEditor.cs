@@ -8,11 +8,11 @@ public class ShipViewEditor : Editor
     {
         DrawDefaultInspector();
 
-        var shipView = (ShipView)target;
+        // var shipView = (ShipView3)target;
 
-        if(GUILayout.Button("Step (1 hour)"))
-        {
-            shipView.model.Move(1);
-        }
+        // if(GUILayout.Button("Step (1 hour)"))
+        // {
+        //     shipView.model.Move(3600);
+        // }
     }
 }

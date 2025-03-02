@@ -70,7 +70,7 @@
                         <engine:DataBinding property="value" data-source-path="enableLocations" data-source-type="GameManager, Assembly-CSharp" binding-mode="TwoWay" />
                     </Bindings>
                 </engine:Toggle>
-                <engine:Toggle label="Line String" name="LineStringsToggle">
+                <engine:Toggle label="Franklin&apos;s Route" name="LineStringsToggle">
                     <Bindings>
                         <engine:DataBinding property="value" data-source-path="enableLineStrings" data-source-type="GameManager, Assembly-CSharp" binding-mode="TwoWay" />
                     </Bindings>
@@ -78,6 +78,11 @@
                 <engine:Toggle label="Fog-Of-War" name="FogOfWarToggle" value="true">
                     <Bindings>
                         <engine:DataBinding property="value" data-source-path="enableFogOfWar" data-source-type="GameManager, Assembly-CSharp" binding-mode="TwoWay" />
+                    </Bindings>
+                </engine:Toggle>
+                <engine:Toggle label="Background Music" name="playingBgmToggle" value="true">
+                    <Bindings>
+                        <engine:DataBinding property="value" data-source-path="playingBgm" data-source-type="GameManager, Assembly-CSharp" binding-mode="TwoWay" />
                     </Bindings>
                 </engine:Toggle>
                 <engine:Slider label="Camera Rotation" value="0" high-value="180" name="CameraRotationSlider" show-input-field="true" low-value="-180" fill="false" />

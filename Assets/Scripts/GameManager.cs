@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     public LayerMask iconLayerMask;
     public MeshRenderer baseSphereMeshRenderer;
     public GameObject fogOfWarSphere;
+    public AudioSource bgmSource;
 
     // Unity.Collections.NativeArray<short> heightTextureRawArray;
     Unity.Collections.NativeArray<ushort> heightTextureRawArray;
@@ -67,6 +68,7 @@ public class GameManager : MonoBehaviour
     public bool enableLocations = false;
     public bool enableLineStrings = false;
     public bool enableFogOfWar = true;
+    public bool playingBgm = true;
 
     public bool westnorthPassageGoalCompleted = false;
     public bool victoryPointNoteGoalComplered = false;
@@ -247,6 +249,15 @@ public class GameManager : MonoBehaviour
         locationsTransform.gameObject.SetActive(enableLocations);
         lineStringsTransform.gameObject.SetActive(enableLineStrings);
         fogOfWarSphere?.SetActive(enableFogOfWar);
+
+        if(playingBgm && !bgmSource.isPlaying)
+        {
+            bgmSource.Play();
+        }
+        else if(!playingBgm && bgmSource.isPlaying)
+        {
+            bgmSource.Pause();
+        }
 
         // Handle keyboard & mouse events.
         if(!EventSystem.current.IsPointerOverGameObject())

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CameraController2 : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class CameraController2 : MonoBehaviour
     // Vector3 lastTrackedPos;
     float lastTrackedLat;
     float lastTrackedLon;
+    // public Transform leafTransform;
 
     public enum ScrollMode
     {
@@ -64,6 +66,8 @@ public class CameraController2 : MonoBehaviour
         var newTrackedPos = GetHitPoint();
         (var newTrackedLat, var newTrackedLon) = Utils.Vector3ToLatitudeLongitudeDeg(newTrackedPos);
 
+        transform.localEulerAngles = transform.localEulerAngles + new Vector3(-(newTrackedLat - lastTrackedLat), newTrackedLon - lastTrackedLon, 0);
+
         // var diff = newTrackedPos - lastTrackedPos;
         // transform.position = transform.position - new Vector3(diff.x * mouseAdjustedCoef.x, 0, diff.z * mouseAdjustedCoef.z);
         UpdateHitPoint();
@@ -93,6 +97,10 @@ public class CameraController2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
 
         // Zoom
         // if(Input.mouseScrollDelta.y != 0 && EventSystem.current && !EventSystem.current.IsPointerOverGameObject())
@@ -123,13 +131,13 @@ public class CameraController2 : MonoBehaviour
         }
     }
 
-    static CameraController _instance;
-    public static CameraController Instance
+    static CameraController2 _instance;
+    public static CameraController2 Instance
     {
         get
         {
             if(_instance == null)
-                _instance = FindFirstObjectByType<CameraController>();
+                _instance = FindFirstObjectByType<CameraController2>();
             return _instance;
         }
     }

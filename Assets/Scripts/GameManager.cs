@@ -8,6 +8,8 @@ using SharpKml.Dom;
 // using Unity.VisualScripting;
 using UnityEngine.PlayerLoop;
 using UnityEngine.EventSystems;
+using System;
+using Unity.Properties;
 
 
 public class GameManager : MonoBehaviour
@@ -23,6 +25,8 @@ public class GameManager : MonoBehaviour
     public GameObject lineStringViewPrefab;
     public Transform lineStringsTransform;
     public LayerMask iconLayerMask;
+    public MeshRenderer baseSphereMeshRenderer;
+    public GameObject fogOfWarSphere;
 
     // Unity.Collections.NativeArray<short> heightTextureRawArray;
     Unity.Collections.NativeArray<ushort> heightTextureRawArray;
@@ -30,9 +34,55 @@ public class GameManager : MonoBehaviour
     public float currentLatitude;
     public float currentLongitude;
     public float currentHeight;
+    public float currentSeaIce;
 
-    public bool enableLocations;
-    public bool enableLineStrings;
+    // sea ince / frozen parameters
+    // TODO: sync with shader?
+    public float minExtent = 70;
+    public float maxExtent = 50; // 60;
+    public float frozenLevel = 0;
+    public float caveLow = -57;
+    public float caveHigh = 53;
+    public float caveCoef = 0.5f;
+
+    // public DateTime currentDateTime = new DateTime(1848, 8, 1, 10, 0, 0);
+    public DateTime _currentDateTime = new DateTime(1848, 8, 1, 10, 0, 0);
+    public DateTime currentDateTime
+    {
+        get => _currentDateTime;
+        set
+        {
+            // var prevDay = _currentDateTime.DayOfYear;
+            // var currentDay = value.DayOfYear;
+            // if(currentDay != prevDay)
+            // {
+            //     // Handle day update
+            //     OnDayChanged();
+            // }
+            _currentDateTime = value;
+            OnDayChanged();
+        }
+    }
+
+    public bool enableLocations = false;
+    public bool enableLineStrings = false;
+    public bool enableFogOfWar = true;
+
+    public bool westnorthPassageGoalCompleted = false;
+    public bool victoryPointNoteGoalComplered = false;
+    public bool isVictory = false;
+    
+    [CreateProperty]
+    public int goalCompleted
+    {
+        get
+        {
+            return (westnorthPassageGoalCompleted ? 1 : 0) +
+                (victoryPointNoteGoalComplered ? 1 : 0);
+        }
+    }
+
+    public int totalGoals = 2;
 
     public ShipView3 hoveringShipView;
     public ShipView3 selectedShipView;
@@ -48,7 +98,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         Core.LatitudeLongitudeDegToHeightMeter = (latDeg, lonDeg) => GetHeight(latDeg, lonDeg, out var _latIdx, out var _lonIdx);
-        Core.LatitudeLongitudeDegToIsIcepack = (latDeg, lonDeg) => true; // TODO: Track this state in a specialized texture? But icepack model itself should be defined in the pure core.
+        Core.LatitudeLongitudeDegToSeaIce = (latDeg, lonDeg) => GetSeaIce(latDeg, lonDeg, 0); // TODO: Track this state in a specialized texture? But icepack model itself should be defined in the pure core.
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -99,6 +149,17 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        // sync base sphere parameters
+        var mat = baseSphereMeshRenderer.sharedMaterial;
+        mat.SetFloat("_FrozenLevel", frozenLevel);
+        mat.SetFloat("_MinExtent", minExtent);
+        mat.SetFloat("_MaxExtent", maxExtent);
+        mat.SetFloat("_CaveLow", caveLow);
+        mat.SetFloat("_CaveHigh", caveHigh);
+        mat.SetFloat("_CaveCoef", caveCoef);
+
+        OnDayChanged();
+
         Debug.Log(GeoUtils.Test2());
     }
 
@@ -135,6 +196,37 @@ public class GameManager : MonoBehaviour
         return heightTexture.GetPixel(lonIdx, latIdx);
     }
 
+    public float GetSeaIce(float latDeg, float lonDeg, float height)
+    {
+        if(height > 0)
+        {
+            return 0;
+        }
+        var latThreshold = Mathf.Lerp(minExtent, maxExtent, frozenLevel);
+
+        if(lonDeg >= caveLow && lonDeg <= caveHigh)
+        {
+            var coef = Mathf.Sin((lonDeg - caveLow) / (caveHigh - caveLow) * Mathf.PI) * caveCoef;
+            latThreshold = 90 - (90 - latThreshold) * (1 - coef);
+        }
+
+        var s = (latDeg - latThreshold) / (90 - latThreshold);
+        return Mathf.Clamp01(s * 2);
+    }
+
+    public float GetFrozenLevel(int dayInYear) // 0 ~ 366
+    {
+        var m = dayInYear / 30.5f;
+        var v = Mathf.Cos((m-2)*(2* Mathf.PI / 12));
+        return (v + 1) / 2;
+    }
+
+    void OnDayChanged()
+    {
+        frozenLevel = GetFrozenLevel(currentDateTime.DayOfYear);
+        baseSphereMeshRenderer.sharedMaterial.SetFloat("_FrozenLevel", frozenLevel);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -145,7 +237,7 @@ public class GameManager : MonoBehaviour
             currentLatitude = latDeg;
             currentLongitude = lonDeg;
             currentHeight = GetHeight(latDeg, lonDeg, out var latIdx, out var lonIdx);
-
+            currentSeaIce = GetSeaIce(latDeg, lonDeg, currentHeight);
             // if(Input.GetMouseButtonDown(0))
             // {
             //     Debug.Log($"Left Click hit.point={hitPoint}, lat={latDeg}, lon={lonDeg}");
@@ -154,7 +246,9 @@ public class GameManager : MonoBehaviour
 
         locationsTransform.gameObject.SetActive(enableLocations);
         lineStringsTransform.gameObject.SetActive(enableLineStrings);
+        fogOfWarSphere?.SetActive(enableFogOfWar);
 
+        // Handle keyboard & mouse events.
         if(!EventSystem.current.IsPointerOverGameObject())
         {
             if(state == State.Idle)
@@ -245,10 +339,47 @@ public class GameManager : MonoBehaviour
                 }
 
             }
-
-
         }
 
+        CheckVictoryCondition();
+    }
+
+    void CheckVictoryCondition()
+    {
+        foreach(var shipView in shipViewsTransform.GetComponentsInChildren<ShipView3>())
+        {
+            if(!westnorthPassageGoalCompleted && shipView.model.longitudeDeg < -125)
+            {
+                westnorthPassageGoalCompleted = true;
+
+                var dts = currentDateTime.ToString("yyyy-MM-dd HH:mm:ss");
+                MessageDialog.Instance.QueueMessage($"Westnorth Passage is discovered in {dts}!\n\n Historically, it's found by Robert McClure in 1850. \n\n https://en.wikipedia.org/wiki/Northwest_Passage");
+            }
+
+            if(!victoryPointNoteGoalComplered)
+            {
+                var lat1 = shipView.model.latitudeDeg;
+                var lon1 = shipView.model.longitudeDeg;
+                var lat2 = 69.5; // Victory Point Note's location
+                var lon2 = -98.5;
+                var distKm = GeoUtils.HaversineDistanceKm(lat1, lon1, lat2, lon2);
+                if(distKm < 40)
+                {
+                    victoryPointNoteGoalComplered = true;
+                    var dts = currentDateTime.ToString("yyyy-MM-dd HH:mm:ss");
+                    MessageDialog.Instance.QueueMessage($"Victory Point Note is found in {dts}!\n\n Historically, it's found by William Hobson in 1859. \n\n https://en.wikipedia.org/wiki/Franklin%27s_lost_expedition");
+                }
+            }
+
+            if(!isVictory)
+            {
+                if(goalCompleted >= totalGoals)
+                {
+                    isVictory = true;
+                    MessageDialog.Instance.QueueMessage("Victory! \n\n All goals are completed.");
+                }
+            }
+        }
     }
 
     public bool GetCurrentLatitudeLongitude(out Vector3 hitPoint, out float latDeg, out float lonDeg)

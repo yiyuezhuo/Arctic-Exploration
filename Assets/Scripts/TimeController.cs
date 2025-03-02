@@ -15,7 +15,12 @@ public class TimeController : MonoBehaviour
     public float accRealWorldSeconds;
     public bool playing;
 
-    public DateTime currentDateTime = new DateTime(1848, 8, 1, 10, 0, 0);
+    // public DateTime currentDateTime = new DateTime(1848, 8, 1, 10, 0, 0);
+    public DateTime currentDateTime
+    {
+        get => GameManager.Instance.currentDateTime;
+        set => GameManager.Instance.currentDateTime = value;
+    }
 
     void Awake()
     {
@@ -60,7 +65,7 @@ public class TimeController : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.Space))
             {
-                OnStartButtonClicked();
+                OnStepButtonClicked();
             }
             if(Input.GetKeyDown(KeyCode.Return))
             {

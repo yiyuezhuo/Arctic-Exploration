@@ -3,25 +3,39 @@
     <engine:TabView style="width: 275px;">
         <engine:Tab label="Control">
             <engine:VisualElement style="flex-grow: 1; background-color: rgba(255, 255, 255, 0.49); width: auto;">
-                <engine:VisualElement style="flex-grow: 0;">
-                    <engine:Slider label="Camera Rotation" value="0" high-value="180" name="CameraRotationSlider" show-input-field="true" low-value="-180" />
+                <engine:Foldout text="Map">
                     <engine:FloatField label="Latitude" name="LatitudeFloatField">
                         <Bindings>
-                            <engine:DataBinding property="value" data-source-path="currentLatitude" data-source-type="GameManager, Assembly-CSharp" binding-mode="TwoWay" />
+                            <engine:DataBinding property="value" data-source-path="currentLatitude" data-source-type="GameManager, Assembly-CSharp" binding-mode="ToTarget" />
                         </Bindings>
                     </engine:FloatField>
                     <engine:FloatField label="Longitude" name="LongtitudeFloatField">
                         <Bindings>
-                            <engine:DataBinding property="value" data-source-path="currentLongitude" data-source-type="GameManager, Assembly-CSharp" binding-mode="TwoWay" />
+                            <engine:DataBinding property="value" data-source-path="currentLongitude" data-source-type="GameManager, Assembly-CSharp" binding-mode="ToTarget" />
                         </Bindings>
                     </engine:FloatField>
                     <engine:FloatField label="Height" name="HeightFloatField">
                         <Bindings>
-                            <engine:DataBinding property="value" data-source-path="currentHeight" data-source-type="GameManager, Assembly-CSharp" binding-mode="TwoWay" />
+                            <engine:DataBinding property="value" data-source-path="currentHeight" data-source-type="GameManager, Assembly-CSharp" binding-mode="ToTarget" />
                         </Bindings>
                     </engine:FloatField>
-                </engine:VisualElement>
+                    <engine:FloatField label="Sea Ice">
+                        <Bindings>
+                            <engine:DataBinding property="value" data-source-path="currentSeaIce" data-source-type="GameManager, Assembly-CSharp" binding-mode="ToTarget" />
+                        </Bindings>
+                    </engine:FloatField>
+                </engine:Foldout>
                 <engine:Foldout text="Ship" name="UnitViewFoldout" data-source-type="GameManager, Assembly-CSharp" data-source-path="selectedShipView.model">
+                    <engine:FloatField label="Latitude">
+                        <Bindings>
+                            <engine:DataBinding property="value" data-source-path="latitudeDeg" binding-mode="ToTarget" />
+                        </Bindings>
+                    </engine:FloatField>
+                    <engine:FloatField label="Longitude">
+                        <Bindings>
+                            <engine:DataBinding property="value" data-source-path="longitudeDeg" binding-mode="ToTarget" />
+                        </Bindings>
+                    </engine:FloatField>
                     <engine:TextField label="Name">
                         <Bindings>
                             <engine:DataBinding property="value" data-source-path="name" data-source-type="ArcticCore.Ship, Assembly-CSharp" binding-mode="TwoWay" />
@@ -37,29 +51,20 @@
                             <engine:DataBinding property="value" data-source-path="shipKnot" data-source-type="ArcticCore.Ship, Assembly-CSharp" binding-mode="TwoWay" />
                         </Bindings>
                     </engine:FloatField>
-                    <engine:IntegerField label="Crew">
+                    <engine:FloatField label="Eff. Speed (kt)">
                         <Bindings>
-                            <engine:DataBinding property="value" data-source-path="crew" binding-mode="TwoWay" />
-                        </Bindings>
-                    </engine:IntegerField>
-                    <engine:FloatField label="Provision">
-                        <Bindings>
-                            <engine:DataBinding property="value" data-source-path="provision" binding-mode="TwoWay" />
+                            <engine:DataBinding property="value" data-source-path="currentEffectiveShipKnot" binding-mode="ToTarget" />
                         </Bindings>
                     </engine:FloatField>
-                    <engine:IntegerField label="Damage">
-                        <Bindings>
-                            <engine:DataBinding property="value" data-source-path="damage" binding-mode="TwoWay" />
-                        </Bindings>
-                    </engine:IntegerField>
                     <engine:Button text="Set Heading by clicking on Map (D)" name="SetHeadingButton" />
-                    <engine:Button text="Detach Expedition Team (U)" name="DetachButton" />
-                    <engine:Button text="Recover Expedition Team (L)" name="RecoverButton" />
+                    <engine:Button text="Detach Expedition Team (U)" name="DetachButton" style="display: none;" />
+                    <engine:Button text="Recover Expedition Team (L)" name="RecoverButton" style="display: none;" />
                 </engine:Foldout>
             </engine:VisualElement>
         </engine:Tab>
         <engine:Tab label="Misc">
             <engine:VisualElement style="flex-grow: 0; background-color: rgba(255, 255, 255, 0.49); width: 300px;">
+                <engine:Button text="Help" name="HelpButton" />
                 <engine:Toggle label="Locations" name="LocationsToggle">
                     <Bindings>
                         <engine:DataBinding property="value" data-source-path="enableLocations" data-source-type="GameManager, Assembly-CSharp" binding-mode="TwoWay" />
@@ -70,7 +75,35 @@
                         <engine:DataBinding property="value" data-source-path="enableLineStrings" data-source-type="GameManager, Assembly-CSharp" binding-mode="TwoWay" />
                     </Bindings>
                 </engine:Toggle>
-                <engine:Button text="Help" name="HelpButton" />
+                <engine:Toggle label="Fog-Of-War" name="FogOfWarToggle" value="true">
+                    <Bindings>
+                        <engine:DataBinding property="value" data-source-path="enableFogOfWar" data-source-type="GameManager, Assembly-CSharp" binding-mode="TwoWay" />
+                    </Bindings>
+                </engine:Toggle>
+                <engine:Slider label="Camera Rotation" value="0" high-value="180" name="CameraRotationSlider" show-input-field="true" low-value="-180" fill="false" />
+            </engine:VisualElement>
+        </engine:Tab>
+        <engine:Tab label="Victory">
+            <engine:VisualElement style="flex-grow: 1; background-color: rgba(255, 255, 255, 0.49);">
+                <engine:ProgressBar value="0" title="Goals Completed" high-value="2">
+                    <Bindings>
+                        <engine:DataBinding property="highValue" data-source-path="totalGoals" data-source-type="GameManager, Assembly-CSharp" binding-mode="ToTarget" />
+                        <engine:DataBinding property="value" data-source-path="goalCompleted" data-source-type="GameManager, Assembly-CSharp" binding-mode="ToTarget" />
+                    </Bindings>
+                </engine:ProgressBar>
+                <engine:Toggle label="Westnorth Passage">
+                    <Bindings>
+                        <engine:DataBinding property="value" data-source-path="westnorthPassageGoalCompleted" data-source-type="GameManager, Assembly-CSharp" binding-mode="ToTarget" />
+                    </Bindings>
+                </engine:Toggle>
+                <engine:Toggle label="Victory Point Note">
+                    <Bindings>
+                        <engine:DataBinding property="value" data-source-path="victoryPointNoteGoalComplered" data-source-type="GameManager, Assembly-CSharp" binding-mode="ToTarget" />
+                    </Bindings>
+                </engine:Toggle>
+                <engine:Foldout text="Spoiler&#10;" value="false">
+                    <engine:TextField multiline="true" vertical-scroller-visibility="Auto" value="Sail the ship past 125 degrees west longitude.&#10;&#10;Google where the victory point note&apos;s location or toggle on location labels." readonly="true" style="white-space: normal;" />
+                </engine:Foldout>
             </engine:VisualElement>
         </engine:Tab>
     </engine:TabView>

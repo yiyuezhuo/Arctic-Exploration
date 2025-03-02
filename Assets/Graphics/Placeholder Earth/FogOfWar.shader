@@ -62,7 +62,12 @@ Shader "Unlit/FogOfWar"
             {
                 // sample the texture
                 float3 spherePos = normalize(i.objPos);
-                float2 texCoord = pointToUV(spherePos);
+                
+                // float2 texCoord = pointToUV(spherePos);
+                float2 longLat = pointToLongitudeLatitude(spherePos);
+                float2 texCoord = longitudeLatitudeToUV(longLat);
+                
+                // FOW
                 float4 col = tex2D(_MainTex, texCoord);
 
                 fixed c = max(col.r, max(col.g, col.b));

@@ -1,5 +1,15 @@
-.unity-base-field__label {
-    width: 115px;
-    max-width: 115px;
-    min-width: 115px;
+.unity-float-field__label {
+    width: 110px;
+    max-width: 110px;
+    min-width: 110px;
+}
+
+.unity-text-field__label {
+    width: 110px;
+    max-width: 110px;
+    min-width: 110px;
+}
+
+.unity-toggle__label {
+    flex-grow: 1;
 }

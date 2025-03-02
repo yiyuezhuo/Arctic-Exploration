@@ -10,7 +10,8 @@ public class FixedDirectionalSizeIcon : MonoBehaviour
     public void LateUpdate()
     {
 
-        var cam = CameraController.Instance.camIcon;
+        // var cam = CameraController.Instance.camIcon;
+        var cam = CameraController2.Instance.camIcon;
 
         transform.LookAt(transform.position + cam.transform.rotation * Vector3.forward,
                          cam.transform.rotation * Vector3.up);

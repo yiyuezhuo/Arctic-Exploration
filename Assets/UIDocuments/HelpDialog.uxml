@@ -1,7 +1,7 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <engine:VisualElement style="flex-grow: 0; background-color: rgba(255, 255, 255, 0.49); width: 400px; top: 50%; left: 50%; translate: -50% -50%;">
         <engine:Label text="Help" />
-        <engine:TextField multiline="true" vertical-scroller-visibility="Auto" value="Hotkeys:&#10;* Space: Step&#10;* Enter: Start auto-playing&#10;* P: Pause auto-playing&#10;* Escape: Cancel selection&#10;* D: Set unit direction" style="max-height: 600px;" />
+        <engine:TextField multiline="true" vertical-scroller-visibility="Auto" value="Hotkeys:&#10;* Space: Step&#10;* Enter: Start auto-playing&#10;* P: Pause auto-playing&#10;* Escape: Cancel selection&#10;* D: Set unit direction" readonly="true" style="max-height: 600px;" />
         <engine:Button text="Confirm" name="ConfirmButton" />
     </engine:VisualElement>
 </engine:UXML>

@@ -23,12 +23,19 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _HeightTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: ad46f5ad3e774b44195c96d08ad18f89, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _FrozenLevel: 0
+    - _MaxExtent: 60
+    - _MinExtent: 70
     m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1

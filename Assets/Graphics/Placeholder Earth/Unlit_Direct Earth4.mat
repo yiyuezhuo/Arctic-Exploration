@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Unlit_ExposeFogOfWar
-  m_Shader: {fileID: 4800000, guid: 2c2bce310f9eb484da61f91c4f39abb9, type: 3}
+  m_Name: Unlit_Direct Earth4
+  m_Shader: {fileID: 4800000, guid: deef9a9340031e943b047d865898aedb, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -23,15 +23,23 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _HeightTex:
+        m_Texture: {fileID: 2800000, guid: 6d0f643f9a535f34cbe651a5c978815d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: c0959d799e983e34e9262d270ae41dff, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _CenterLat: 74.36274
-    - _CenterLon: -76.57053
-    - _Radius: 12
+    - _CaveCodf: 0.5
+    - _CaveCoef: 0.5
+    - _CaveHigh: 53
+    - _CaveLow: -57
+    - _FrozenLevel: 0.06069386
+    - _MaxExtent: 55
+    - _MinExtent: 70
     m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1

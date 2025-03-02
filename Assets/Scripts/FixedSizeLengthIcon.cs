@@ -13,7 +13,8 @@ public class FixedSizeLengthIcon : MonoBehaviour
     public void Update()
     {
 
-        var cam = CameraController.Instance.camIcon;
+        // var cam = CameraController.Instance.camIcon;
+        var cam = CameraController2.Instance.camIcon;
 
         transform.localScale = Vector3.one * cam.orthographicSize * scaleFactor;
         

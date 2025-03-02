@@ -7,7 +7,7 @@
             <engine:Button text="Start" name="StartButton" tooltip="start auto-playing" style="flex-basis: initial; flex-grow: 1;" />
             <engine:Button text="Pause" name="PauseButton" tooltip="puase auto-playing" style="flex-basis: initial; flex-grow: 1;" />
         </engine:VisualElement>
-        <engine:SliderInt label="Speed" high-value="20" show-input-field="true" name="SpeedSliderInt" tooltip="How many step a real second advanced." low-value="0" value="5" />
-        <engine:SliderInt label="Step (m/s)" high-value="120" show-input-field="true" name="StepSliderInt" tooltip="How many game minutes a step will advance" value="60" />
+        <engine:SliderInt label="Speed" high-value="30" show-input-field="true" name="SpeedSliderInt" tooltip="How many step a real second advanced." low-value="0" value="10" />
+        <engine:SliderInt label="Step (m/s)" high-value="360" show-input-field="true" name="StepSliderInt" tooltip="How many game minutes a step will advance" value="60" />
     </engine:VisualElement>
 </engine:UXML>
